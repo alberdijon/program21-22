@@ -1,2 +1,2 @@
 # program21-22
-Programazioa ikasgaiko materiale guztia unitate didaktikoa antolatua
+Programazioa ikasgaiko materiale guztia unitate didaktikoka antolatua
