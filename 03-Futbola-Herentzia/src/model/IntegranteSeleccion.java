@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package model;
 
 /**
@@ -14,13 +9,20 @@ package model;
 public class IntegranteSeleccion {
     protected int id;
     protected String nombre;
-    String apellidos;
-    int edad;
-
-    public IntegranteSeleccion(int id, String nombre, String apellidos, int edad) {
+    private String apellido;
+    private int edad;
+    
+    public IntegranteSeleccion(){
+        this.id = 0;
+        this.nombre = "null";
+        this.apellido = "null";
+        this.edad = 0;
+    }
+    
+    public IntegranteSeleccion(int id, String nombre, String apellido, int edad){
         this.id = id;
         this.nombre = nombre;
-        this.apellidos = apellidos;
+        this.apellido = apellido;
         this.edad = edad;
     }
 
@@ -32,8 +34,8 @@ public class IntegranteSeleccion {
         return nombre;
     }
 
-    public String getApellidos() {
-        return apellidos;
+    public String getApellido() {
+        return apellido;
     }
 
     public int getEdad() {
@@ -48,8 +50,8 @@ public class IntegranteSeleccion {
         this.nombre = nombre;
     }
 
-    public void setApellidos(String apellidos) {
-        this.apellidos = apellidos;
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
 
     public void setEdad(int edad) {
@@ -57,10 +59,15 @@ public class IntegranteSeleccion {
     }
     
     public void concentrarse(){
-        System.out.println("Estoy en una concentración");
+        System.out.println("Concentrandose");
     }
     
-    public void viaje(){
-        System.out.println("Estoy en un vaije");
+    public void viajar(){
+        System.out.println("Viajando");
     }
+
+    @Override
+    public String toString() {
+        return "IntegranteSeleccion{" + "id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", edad=" + edad + '}';
+    } 
 }

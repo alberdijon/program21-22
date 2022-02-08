@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package model;
 
 
@@ -14,42 +9,53 @@ import java.util.ArrayList;
  * @author alberdi.jon
  */
 public class Partida {
-     private LocalDate data;
+    private LocalDate data;
     private String aurkaria;
-    private ArrayList<Futbolista> txartelak;
-
-    public Partida(LocalDate data, String aurkaria, ArrayList<Futbolista> txartelak) {
+    private ArrayList<Futbolista> txarterlak;
+    
+    public Partida(LocalDate data, String aurkaria){
         this.data = data;
         this.aurkaria = aurkaria;
-        this.txartelak = txartelak;
+        this.txarterlak = new ArrayList<>();
+    }
+    
+    public Partida(LocalDate data, String aurkaria, ArrayList<Futbolista> txartelak){
+        this.data = data;
+        this.aurkaria = aurkaria;
+        this.txarterlak = txartelak;
     }
 
     public LocalDate getData() {
         return data;
     }
 
-    public void setData(LocalDate data) {
-        this.data = data;
-    }
-
     public String getAurkaria() {
         return aurkaria;
+    }
+
+    public ArrayList<Futbolista> getTxarterlak() {
+        return txarterlak;
+    }
+
+    public void setData(LocalDate data) {
+        this.data = data;
     }
 
     public void setAurkaria(String aurkaria) {
         this.aurkaria = aurkaria;
     }
 
-    public ArrayList<Futbolista> getTxartelak() {
-        return txartelak;
+    public void setTxarterlak(ArrayList<Futbolista> txarterlak) {
+        this.txarterlak = txarterlak;
+    }
+    
+    public void txartelaJarri(Futbolista f){
+        txarterlak.add(f);
+        //System.out.println("Txartela duen futbolaria: " + f);
     }
 
-    public void setTxartelak(ArrayList<Futbolista> txartelak) {
-        this.txartelak = txartelak;
-    }
-
-    public void txartelaJarri(Futbolista f) {
-
-    }
-
+    @Override
+    public String toString() {
+        return "Partida{" + "data=" + data + ", aurkaria=" + aurkaria + ", txarterlak=" + txarterlak + '}';
+    }     
 }

@@ -1,57 +1,67 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package model;
 
 /**
  *
  * @author alberdi.jon
  */
-public class Futbolista  extends IntegranteSeleccion {
-    
+public class Futbolista extends IntegranteSeleccion{
     private int dorsal;
-    private Demarkazioa demarcación;
-
-    public Futbolista(int dorsal, Demarkazioa demarcación, int id, String nombre, String apellidos, int edad) {
-        super(id, nombre, apellidos, edad);
-        this.dorsal= dorsal;
-        this.demarcación= demarcación;
-    }
-
-    @Override
-    public String toString() {
-        return "Futbolista{ id = " + id + ", nombre = " + nombre + ", apellido = " + apellidos + ", edad= " + edad + ", dorsal= " + dorsal + ", demarcación= " + demarcación;
-    }
-
+    private Demarkazioa Demarkazioa;
     
+    public Futbolista(int dorsal, Demarkazioa Demarkazioa){
+        super();
+        this.dorsal = dorsal;
+        this.Demarkazioa = Demarkazioa;
+    }
     
-
-   
+    public Futbolista(int id,String nombre, String apellido, int edad, int dorsal, Demarkazioa Demarkazioa){
+        super(id,nombre,apellido,edad);
+        this.dorsal = dorsal;
+        this.Demarkazioa = Demarkazioa;
+    }
 
     public int getDorsal() {
         return dorsal;
     }
 
-    public Demarkazioa getDemarcación() {
-        return demarcación;
+    public Demarkazioa Demarkazioa() {
+        return Demarkazioa;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getNombre() {
+        return nombre;
     }
 
     public void setDorsal(int dorsal) {
         this.dorsal = dorsal;
     }
 
-    public void setDemarcación(Demarkazioa demarcación) {
-        this.demarcación = demarcación;
+    public void setDemarkazioa(Demarkazioa Demarkazioa) {
+        this.Demarkazioa = Demarkazioa;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
     
     public void entrenar(){
-        System.out.println("Estoy entrenando");
+        System.out.println("Entrenando");
     }
     
     public void jugarPartido(){
-        System.out.println("Estoy jugando un partido");
+        System.out.println("Jugando partido");
     }
-    
+
+    @Override
+    public String toString() {
+        return "Futbolista{id = " + super.getId() + ",nombre = " + super.getNombre() + ",apellido = " + super.getApellido() + ",edad = " + super.getEdad() +",dorsal = " + dorsal + ", Demarkazioa=" + Demarkazioa + '}';
+    }  
 }

@@ -1,35 +1,60 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package model;
 
 /**
  *
  * @author alberdi.jon
  */
-public class Entrenador extends IntegranteSeleccion {
+public class Entrenador extends IntegranteSeleccion{
+    private String idFederacion;
     
-    private String idFederación;
+    public Entrenador(){
+        this.idFederacion = "000000";
+    }
+    
+    public Entrenador(String idFederacion){
+        super();
+        this.idFederacion = idFederacion;
+    }
+    
+    public Entrenador(int id, String nombre, String apellido, int edad, String idFederacion){
+        super(id,nombre,apellido,edad);
+        this.idFederacion = idFederacion;
+    } 
 
-    public Entrenador(String idFederación, int id, String nombre, String apellidos, int edad) {
-        super(id, nombre, apellidos, edad);
+    public String getIdFederacion() {
+        return idFederacion;
     }
 
-    public String getIdFederación() {
-        return idFederación;
+    public int getId() {
+        return id;
     }
 
-    public void setIdFederación(String idFederación) {
-        this.idFederación = idFederación;
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setIdFederacion(String idFederacion) {
+        this.idFederacion = idFederacion;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
     
     public void dirigirEntrenamiento(){
-        System.out.println("Estoy dirigiendo un entrenamiento");
+        System.out.println("Dirigiendo entrenamiento");
     }
     
-     public void dirigirPartido(){
-        System.out.println("Estoy dirigiendo un partido");
+    public void dirigirPartido(){
+        System.out.println("Dirigiendo partido");
     }
+
+    @Override
+    public String toString() {
+        return "Entrenador{id = " + super.getId() + ",nombre = "+ super.getNombre() + ",apellido = " + super.getApellido() + ",edad = " + super.getEdad() + ", idFederacion = " + idFederacion + '}';
+    }   
 }
